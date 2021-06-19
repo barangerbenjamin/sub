@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
-  before_action :set_subscription, only: [:show, :edit, :destroy]
+  before_action :set_subscription, only: [:show, :edit, :destroy, :update]
   def index
     @subscriptions = Subscription.all
     @total = @subscriptions.map(&:price).sum
@@ -23,6 +23,11 @@ class SubscriptionsController < ApplicationController
   def edit; end
 
   def update
+    if @subscription.update(subscription_params)
+      redirect_to subscription_path(@subscription)
+    else
+      render :edit
+    end
   end
 
   def destroy
