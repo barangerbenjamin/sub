@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
-  before_action :set_subscription, only: [:show, :edit]
+  before_action :set_subscription, only: [:show, :edit, :destroy]
   def index
     @subscriptions = Subscription.all
     @total = @subscriptions.map(&:price).sum
@@ -26,6 +26,8 @@ class SubscriptionsController < ApplicationController
   end
 
   def destroy
+    @subscription.destroy
+    redirect_to root_path
   end
 
   private
