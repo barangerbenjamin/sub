@@ -2,14 +2,16 @@
     <div class="row min-vh-100 align-items-center">
         <div class="col-xs-12 col-md-6 offset-md-3">
             <% @subscriptions.each do |subscription| %>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <h3 class="m-0"><%= subscription.name %></h3>
-                            <p class="m-0"><strong>£<%= subscription.price %></strong></p>
+                <%= link_to subscription_path(subscription), class: "text-dark text-decoration-none" do %>
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h3 class="m-0"><%= subscription.name %></h3>
+                                <p class="m-0"><strong>£<%= subscription.price %></strong></p>
+                            </div>
                         </div>
                     </div>
-                </div>    
+                <% end %>    
             <% end %>
             <div class="d-flex justify-content-between align-items-center mt-3 p-2">
                 <h3 class="m-0">Total:</h3>
