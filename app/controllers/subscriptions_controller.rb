@@ -1,4 +1,5 @@
 class SubscriptionsController < ApplicationController
+  before_action :set_subscription, only: [:show, :edit]
   def index
     @subscriptions = Subscription.all
     @total = @subscriptions.map(&:price).sum
@@ -17,12 +18,9 @@ class SubscriptionsController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-    @subscription = Subscription.find(params[:id])
-  end
+  def edit; end
 
   def update
   end
@@ -31,6 +29,10 @@ class SubscriptionsController < ApplicationController
   end
 
   private
+
+  def set_subscription
+    @subscription = Subscription.find(params[:id])
+  end
 
   def subscription_params
     params.require(:subscription).permit(:name, :price, :start_at, :ends_at)
