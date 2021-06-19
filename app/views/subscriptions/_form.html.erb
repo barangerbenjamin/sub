@@ -1,0 +1,7 @@
+<%= simple_form_for(subscription) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.input :start_at %>
+    <%= f.input :ends_at %>
+    <%= f.submit "Create", class: 'btn btn-primary' %>
+<% end %>

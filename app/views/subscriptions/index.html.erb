@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row min-vh-100 align-items-center">
+        <div class="col-xs-12 col-md-6 offset-md-3">
+            <% @subscriptions.each do |subscription| %>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3 class="m-0"><%= subscription.name %></h3>
+                            <p class="m-0"><strong>£<%= subscription.price %></strong></p>
+                        </div>
+                    </div>
+                </div>    
+            <% end %>
+            <div class="d-flex justify-content-between align-items-center mt-3 p-2">
+                <h3 class="m-0">Total:</h3>
+                <p class="m-0"><strong>£<%= @total %></strong></p>
+            </div>
+            <div class="d-flex justify-content-around align-items-center mt-3 p-2">
+                <%= link_to "New", new_subscription_path, class: "btn btn-primary" %>
+            </div>
+        </div>
+    </div>
+</div>
+
