@@ -1,12 +1,25 @@
 <div class="container">
     <div class="row min-vh-100 align-items-center">
         <div class="col-xs-12 col-md-6 offset-md-3">
-            <p>Start Date</p>
-            <p><%= @subscription.start_at %></p>
-            <p>End Date</p>
-            <p><%= @subscription.ends_at %></p>
-            <p>Price</p>
-            <p><%= @subscription.start_at %></p>
+            <div class="card">
+                <div class="card-header">
+                    <%= @subscription.name.capitalize %>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title">Start Date</h6>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= @subscription.start_at %></h6>
+                    <h6 class="card-title">End Date</h6>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= @subscription.ends_at %></h6>
+                    <h6 class="card-title">Price</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">£<%= @subscription.price %></h6>
+                    
+                    <div class="d-flex justify-content-between">
+
+                        <a href="#" class="btn btn-primary">Edit</a>
+                        <a href="#" class="btn btn-primary">Delete</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
