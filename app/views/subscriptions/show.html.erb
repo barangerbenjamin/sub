@@ -3,7 +3,7 @@
         <div class="col-xs-12 col-md-6 offset-md-3">
             <div class="card">
                 <div class="card-header">
-                    <%= @subscription.name.capitalize %>
+                    <strong><%= @subscription.name.capitalize %></strong>
                 </div>
                 <div class="card-body">
                     <h6 class="card-title">Start Date</h6>
@@ -15,8 +15,7 @@
                     
                     <div class="d-flex justify-content-between">
                         <%= link_to 'Edit', edit_subscription_path(@subscription), class: "btn btn-primary" %>
-                        
-                        <a href="#" class="btn btn-primary">Delete</a>
+                        <%= link_to 'Delete', subscription_path(@subscription), method: :delete, class: "btn btn-danger" %>
                     </div>
                 </div>
             </div>
