@@ -1,5 +1,5 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon mt-2">
-  <%= link_to "#", class: "navbar-brand" do %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon mt-2 d-flex justify-content-around">
+  <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "icons/android-icon-192x192.png" %>
     <% end %>
 
@@ -8,17 +8,5 @@
   </button>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+  
 </div>
