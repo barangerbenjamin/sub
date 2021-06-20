@@ -3,12 +3,14 @@
         <strong><%= @subscription.name.capitalize %></strong>
     </div>
     <div class="card-body">
-        <h6 class="card-title">Start Date</h6>
-        <h6 class="card-subtitle mb-2 text-muted"><%= @subscription.start_at %></h6>
-        <h6 class="card-title">End Date</h6>
-        <h6 class="card-subtitle mb-2 text-muted"><%= @subscription.ends_at %></h6>
-        <h6 class="card-title">Price</h6>
-        <h6 class="card-subtitle mb-2 text-muted">£<%= @subscription.price %></h6>
+        <h6 class="card-title font-weight-light">Start Date</h6>
+        <h6 class="card-subtitle mb-2 text-muted font-weight-bold"><%= @subscription.start_at %></h6>
+        <h6 class="card-title font-weight-light">End Date</h6>
+        <h6 class="card-subtitle mb-2 text-muted font-weight-bold"><%= @subscription.ends_at %></h6>
+        <h6 class="card-title font-weight-light">Price</h6>
+        <h6 class="card-subtitle mb-2 text-muted font-weight-bold">£<%= @subscription.price %></h6>
+        <h6 class="card-title font-weight-light">Category</h6>
+        <h6 class="card-subtitle mb-2 text-muted font-weight-bold"><%= @subscription.category %></h6>
         
         <div class="d-flex justify-content-between">
             <%= link_to 'Edit', edit_subscription_path(@subscription), class: "btn btn-primary" %>
