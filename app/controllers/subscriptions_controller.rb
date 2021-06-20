@@ -2,7 +2,11 @@ class SubscriptionsController < ApplicationController
   before_action :set_subscription, only: [:show, :edit, :destroy, :update]
   def index
     @subscriptions = Subscription.all
-    @total = @subscriptions.map(&:price).sum
+    monthly = @subscriptions.select { |subscription| subscription.frequency == 'Month' }.map(&:price).sum
+    two_months = @subscriptions.select { |subscription| subscription.frequency == '2 Months' }.map(&:price).sum / 2
+    six_months = @subscriptions.select { |subscription| subscription.frequency == '6 Months' }.map(&:price).sum / 6
+    twelve_months = @subscriptions.select { |subscription| subscription.frequency == 'Year' }.map(&:price).sum / 12
+    @total = monthly + two_months + six_months + twelve_months
   end
 
   def new
