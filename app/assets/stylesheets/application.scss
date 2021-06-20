@@ -12,3 +12,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+.row {
+    min-height: calc(100vh - 70px);
+}
