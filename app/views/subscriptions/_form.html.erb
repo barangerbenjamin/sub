@@ -4,5 +4,6 @@
     <%= f.input :category, collection: ['Food', 'Insurance', 'Bills', 'Sport', 'Rusty', 'Leisure' ].sort + ['Other'] %>
     <%= f.input :start_at, as: :string, required: false, input_html: {class: "datepicker"} %>
     <%= f.input :duration, collection: ['Unlimited'] + (1..36).to_a, label: 'Duration (months)' %>
+    <%= f.input :frequency, collection: ['Month', '2 Months', '6 Months', 'Year'], label: 'Payment every...' %>
     <%= f.submit "Submit", class: 'btn btn-primary' %>
 <% end %>
