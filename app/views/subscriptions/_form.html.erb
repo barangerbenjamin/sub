@@ -1,6 +1,7 @@
 <%= simple_form_for(subscription) do |f| %>
     <%= f.input :name %>
     <%= f.input :price %>
+    <%= f.input :category, collection: ['Food', 'Insurance', 'Service', 'Sport' ].sort + ['Other'] %>
     <%= f.input :start_at %>
     <%= f.input :ends_at %>
     <%= f.submit "Submit", class: 'btn btn-primary' %>
