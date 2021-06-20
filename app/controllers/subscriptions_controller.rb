@@ -11,6 +11,7 @@ class SubscriptionsController < ApplicationController
 
   def create
     @subscription = Subscription.new(subscription_params)
+    @subscription.ends_at = @subscription.start_at + params['subscription']['duration'].to_i.month if params['subscription']['duration'] != 'Unlimited'
     if @subscription.save
       redirect_to root_path
     else
