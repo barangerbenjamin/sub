@@ -8,7 +8,7 @@
         <h6 class="card-title font-weight-light">End Date</h6>
         <h6 class="card-subtitle mb-2 text-muted font-weight-bold"><%= @subscription.ends_at.nil? ? 'Unlimited' : @subscription.ends_at %></h6>
         <h6 class="card-title font-weight-light">Price</h6>
-        <h6 class="card-subtitle mb-2 text-muted font-weight-bold">£<%= @subscription.price %></h6>
+        <h6 class="card-subtitle mb-2 text-muted font-weight-bold">£<%= number_with_precision(@subscription.price, precision: 2) %></h6>
         <h6 class="card-title font-weight-light">Category</h6>
         <h6 class="card-subtitle mb-2 text-muted font-weight-bold"><%= @subscription.category %></h6>
         
