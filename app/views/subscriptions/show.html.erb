@@ -1,24 +1,18 @@
-<div class="container">
-    <div class="row min-vh-100 align-items-center">
-        <div class="col-xs-12 col-md-6 offset-md-3">
-            <div class="card">
-                <div class="card-header">
-                    <strong><%= @subscription.name.capitalize %></strong>
-                </div>
-                <div class="card-body">
-                    <h6 class="card-title">Start Date</h6>
-                    <h6 class="card-subtitle mb-2 text-muted"><%= @subscription.start_at %></h6>
-                    <h6 class="card-title">End Date</h6>
-                    <h6 class="card-subtitle mb-2 text-muted"><%= @subscription.ends_at %></h6>
-                    <h6 class="card-title">Price</h6>
-                    <h6 class="card-subtitle mb-2 text-muted">£<%= @subscription.price %></h6>
-                    
-                    <div class="d-flex justify-content-between">
-                        <%= link_to 'Edit', edit_subscription_path(@subscription), class: "btn btn-primary" %>
-                        <%= link_to 'Delete', subscription_path(@subscription), method: :delete, class: "btn btn-danger" %>
-                    </div>
-                </div>
-            </div>
+<div class="card">
+    <div class="card-header">
+        <strong><%= @subscription.name.capitalize %></strong>
+    </div>
+    <div class="card-body">
+        <h6 class="card-title">Start Date</h6>
+        <h6 class="card-subtitle mb-2 text-muted"><%= @subscription.start_at %></h6>
+        <h6 class="card-title">End Date</h6>
+        <h6 class="card-subtitle mb-2 text-muted"><%= @subscription.ends_at %></h6>
+        <h6 class="card-title">Price</h6>
+        <h6 class="card-subtitle mb-2 text-muted">£<%= @subscription.price %></h6>
+        
+        <div class="d-flex justify-content-between">
+            <%= link_to 'Edit', edit_subscription_path(@subscription), class: "btn btn-primary" %>
+            <%= link_to 'Delete', subscription_path(@subscription), method: :delete, class: "btn btn-danger" %>
         </div>
     </div>
 </div>
