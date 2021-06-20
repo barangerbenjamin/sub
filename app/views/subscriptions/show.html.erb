@@ -6,7 +6,7 @@
         <h6 class="card-title font-weight-light">Start Date</h6>
         <h6 class="card-subtitle mb-2 text-muted font-weight-bold"><%= @subscription.start_at %></h6>
         <h6 class="card-title font-weight-light">End Date</h6>
-        <h6 class="card-subtitle mb-2 text-muted font-weight-bold"><%= @subscription.ends_at %></h6>
+        <h6 class="card-subtitle mb-2 text-muted font-weight-bold"><%= @subscription.ends_at.nil? ? 'Unlimited' : @subscription.ends_at %></h6>
         <h6 class="card-title font-weight-light">Price</h6>
         <h6 class="card-subtitle mb-2 text-muted font-weight-bold">£<%= @subscription.price %></h6>
         <h6 class="card-title font-weight-light">Category</h6>
